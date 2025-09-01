@@ -1,0 +1,50 @@
+<!-- HTML-файл для страницы категории "Недвижимость" -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paydo.tj - Недвижимость</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Шапка сайта с логотипом слева, поисковой строкой по центру и навигацией справа -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo"><img id="logo-image" src="E:/platform/Logo/Logo.gif" alt="Paydo.tj Logo" class="logo-image animate-logo"></a>
+        <div class="header-center">
+          <div class="search-bar">
+            <input type="text" placeholder="Поиск по объявлениям..." class="search-input">
+            <button class="btn primary-btn">Найти</button>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="btn primary-btn">Разместить объявление</button>
+          <button class="btn secondary-btn">Войти</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Секция подкатегорий недвижимости -->
+  <section class="container">
+    <h2>Недвижимость</h2>
+    <div class="grid" id="subcategories-grid"></div>
+    <h2>Объявления</h2>
+    <div class="grid" id="listings-grid"></div>
+  </section>
+
+  <!-- Подключение скриптов -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Инициализация страницы категории "Недвижимость"
+    document.addEventListener('DOMContentLoaded', () => {
+      populateSubcategoriesGrid('real-estate');
+      populateListingsGrid('real-estate');
+      stopLogoAnimation(); // Останавливаем GIF-анимацию после одного цикла
+    });
+  </script>
+</body>
+</html>

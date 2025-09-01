@@ -1,0 +1,289 @@
+/* Общие стили для приложения */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFDD0; /* Молочный цвет фона */
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер для центрирования контента */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Стили для заголовка */
+.header {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Стили для содержимого шапки */
+.header .container {
+  padding: 10px 15px;
+}
+
+/* Стили для контейнера шапки (логотип, поиск, навигация) */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Стили для центрального контейнера с поисковой строкой */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Стили для логотипа */
+.logo-image {
+  height: 100px; /* Увеличенный размер логотипа */
+  width: auto;
+  /* Примечание: Убедитесь, что статичное изображение (Logo-static.jpg) соответствует этому размеру */
+}
+
+.animate-logo {
+  animation: logoScale 0.5s ease-in-out forwards; /* CSS-анимация масштабирования выполняется однократно */
+}
+
+/* Анимация логотипа при загрузке страницы */
+@keyframes logoScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Стили для навигации */
+.nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Стили для кнопок */
+.btn {
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: #FF6F00;
+  color: #fff;
+  border: none;
+}
+
+.secondary-btn {
+  background-color: #fff;
+  border: 1px solid #6c757d;
+  border-radius: 20px;
+  color: #6c757d;
+}
+
+/* Стили для поисковой панели */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 600px; /* Минимальная ширина блока поисковой строки для большей видимости */
+}
+
+/* Стили для поля ввода поисковой строки */
+.search-input {
+  flex: 1;
+  max-width: 900px; /* Увеличенная ширина поисковой строки */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность для меньших экранов */
+@media (max-width: 768px) {
+  .search-bar {
+    min-width: 300px; /* Уменьшенная минимальная ширина для мобильных устройств */
+  }
+  .search-input {
+    max-width: 500px; /* Уменьшенная ширина поля ввода для мобильных устройств */
+  }
+}
+
+@media (max-width: 576px) {
+  .search-bar {
+    min-width: 200px; /* Ещё меньшая ширина для очень маленьких экранов */
+  }
+  .search-input {
+    max-width: 300px; /* Ещё меньшая ширина поля ввода для очень маленьких экранов */
+  }
+}
+
+/* Стили для заголовков */
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Стили для сетки */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+@media (min-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Стили для карточек категорий и подкатегорий */
+.category-card, .subcategory-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.2s;
+}
+
+.category-card:hover, .subcategory-card:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon, .subcategory-icon {
+  font-size: 2rem; /* Размер иконки */
+  color: #FF6F00; /* Оранжевый цвет иконки */
+  margin-bottom: 10px; /* Отступ под иконкой */
+  display: block; /* Иконка на отдельной строке */
+}
+
+.category-card img, .subcategory-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.category-card span, .subcategory-card span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Стили для карточек объявлений */
+.listing-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-card:hover {
+  box-shadow: 0 3px 10px rgba(255, 111, 0, 0.5); /* Оранжевая тень при наведении */
+}
+
+.listing-image {
+  background-color: #e9ecef;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.listing-image i {
+  font-size: 3rem;
+  color: #6c757d;
+}
+
+.listing-body {
+  padding: 15px;
+}
+
+.listing-body h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.listing-body .price {
+  color: #FF6F00;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.listing-body .location {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.listing-body .badge {
+  background-color: #28a745;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* Стили для страницы объявления */
+.listing-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.listing-details-image {
+  flex: 1 1 100%;
+  background-color: #e9ecef;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.listing-details-image i {
+  font-size: 3rem;
+  color: #6c757d;
+}
+
+.listing-details-content {
+  flex: 1 1 100%;
+}
+
+.listing-details-content .price {
+  font-size: 1.5rem;
+  color: #FF6F00;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .listing-details-image {
+    flex: 1 1 50%;
+  }
+  .listing-details-content {
+    flex: 1 1 50%;
+  }
+}
